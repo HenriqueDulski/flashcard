@@ -1,4 +1,4 @@
-{
+* {
     box-sizing: boxer-box;
     margin: 0;
     padding: 0;
@@ -8,24 +8,92 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: grey;
 }
 
 .cabecalho {
+    background-color: white;
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.cabecalho-link {
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    background-color: white;
+    padding: 15px 25px;
+}
+
 main{
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .cartao {
     width: 260px;
-    height: 200px;
+    height: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    perspective: 1000px;
 }
 
 .cartao-imagem {
     width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 12px;
 }
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.cartao-frente,
+.cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+}
+
+.cartao-verso {
+    transform: rotateY(180deg);
+}
+
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+
+section {
+    display: flex;
+    gap: 16px;
+}
+
